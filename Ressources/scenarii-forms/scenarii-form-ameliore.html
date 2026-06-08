@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire de demande de test – Version améliorée</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        main {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-section {
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+
+        form {
+            max-width: 650px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 14px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .required::after {
+            content: " *";
+            color: red;
+        }
+
+        .help-box {
+            background: #f9f9f9;
+            border-left: 4px solid #800020;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #333;
+        }
+
+        button[type="submit"] {
+            margin-top: 25px;
+            padding: 12px 25px;
+            border: none;
+            cursor: pointer;
+            background-color: #800020;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 15px;
+            border-radius: 4px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #5f0018;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section class="form-section" name="formulaire-demande-test">
+            <h1>Formulaire de demande de test</h1>
+
+            <form action="#" method="post">
+
+                <!-- CAS DE TEST -->
+                <label for="cas-test" class="required">Cas de test</label>
+                <div class="help-box">
+                    Titre clair et descriptif du test.
+                    <br><strong>Exemples :</strong>
+                    – « Suppression d’un utilisateur par un administrateur »
+                    – « Vérification du message d’erreur lors d’un login invalide »
+                    – « Le bouton Export CSV génère bien un fichier valide »
+                </div>
+                <input type="text" id="cas-test" name="cas-test" maxlength="120"
+                    placeholder="Ex : Suppression d’un utilisateur par un administrateur" required>
+
+                <!-- CONDITIONS PRÉALABLES -->
+                <label for="conditions-prealables" class="required">Conditions préalables</label>
+                <div class="help-box">
+                    Liste des éléments nécessaires pour exécuter le test dans de bonnes conditions.
+                    <br><strong>Inclure :</strong> accès, rôles, comptes techniques, environnement, données à créer, pièces jointes,
+                    pré‑configuration.
+                    <br><strong>Important :</strong> les tests ne doivent pas dépendre de données existantes en production ou en base.
+                    Toute donnée nécessaire doit être <u>créée dans les étapes du test</u> ou fournie ici en tant que ressource.
+                    <br><strong>Exemples :</strong>
+                    – « Compte de test avec rôle ADMIN (à créer dans les étapes si nécessaire) »  
+                    – « Accès à l’environnement de préproduction »  
+                    – « Fichier PDF de test fourni en pièce jointe »  
+                    – « Activation du module X dans la configuration de l’environnement »  
+                </div>
+                <textarea id="conditions-prealables" name="conditions-prealables" required
+                        placeholder="- Compte de test avec rôle ADMIN
+- Accès à l’environnement de préproduction
+- Fichier PDF de test fourni en ressource"></textarea>
+
+
+                <!-- ÉTAPES DU CAS DE TEST -->
+                <label for="etapes-cas-test" class="required">Étapes du cas de test</label>
+                <div class="help-box">
+                    Décrire précisément le protocole du test, étape par étape.
+                    <br><strong>Inclure :</strong> navigation, actions, clics, saisies, URLs, interactions externes (app
+                    desktop, API…).
+                    <br><strong>Exemples :</strong>
+                    – « 1. Se connecter avec le compte admin »
+                    – « 2. Aller sur /admin/users »
+                    – « 3. Cliquer sur le bouton Supprimer de l’utilisateur X »
+                    – « 4. Confirmer la suppression dans la popup »
+                </div>
+                <textarea id="etapes-cas-test" name="etapes-cas-test" required placeholder="1. Se connecter avec le compte admin
+2. Aller sur /admin/users
+3. Cliquer sur le bouton Supprimer de l’utilisateur X
+4. Confirmer la suppression"></textarea>
+
+                <!-- RÉSULTATS ATTENDUS -->
+                <label for="resultats-attendus" class="required">Résultats attendus</label>
+                <div class="help-box">
+                    Ce qui doit se produire pour considérer le test comme réussi.
+                    <br><strong>Exemples :</strong>
+                    – « L’utilisateur n’apparaît plus dans la liste »
+                    – « L’API renvoie un status 200 »
+                    – « Un message “Suppression effectuée” apparaît »
+                    – « Le fichier exporté contient 12 lignes »
+                </div>
+                <textarea id="resultats-attendus" name="resultats-attendus" required placeholder="- L’utilisateur est supprimé
+- Message : “Suppression effectuée”
+- Aucun autre utilisateur impacté"></textarea>
+
+                <!-- KO -->
+                <label for="ko">KO ? (conditions d’échec spécifiques)</label>
+                <div class="help-box">
+                    Détails précis pouvant invalider le test même si l’action principale semble fonctionner.
+                    <br><strong>Exemples :</strong>
+                    – « Timeout > 5 secondes »
+                    – « Message d’erreur incorrect »
+                    – « Suppression effectuée mais liste non rafraîchie »
+                    – « API renvoie 200 mais payload incorrect »
+                </div>
+                <textarea id="ko" name="ko" placeholder="- Timeout > 5s
+- Message incorrect
+- Liste non rafraîchie après suppression"></textarea>
+
+                <button type="submit">Soumettre le cas de test</button>
+            </form>
+
+        </section>
+    </main>
+</body>
+
+</html>

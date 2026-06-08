@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="INDDDID.Application/INDDDID.Application.csproj" Id="27916806-d689-4b91-9fd1-7f66a33650d1" />
+  <Project Path="INDDDID.Domain/INDDDID.Domain.csproj" Id="69d540bf-a139-4b08-a783-4150f1964ea7" />
+  <Project Path="INDDDID.Infrastructure/INDDDID.Infrastructure.csproj" Id="241947e1-dbe4-4160-8d48-dadb51f5429f" />
+  <Project Path="INDDDID.Tests/INDDDID.Tests.csproj" />
+  <Project Path="INDDDID/INDDDID.csproj" />
+</Solution>

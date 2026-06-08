@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulaire de demande de test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 20px;
+    }
+
+    main {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-section {
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
+
+    form {
+      max-width: 600px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      font-family: inherit;
+      font-size: 14px;
+      border-radius: 8px;
+    }
+
+    textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .required::after {
+      content: " *";
+      color: red;
+    }
+
+    button[type="submit"] {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      background-color: #800020; /* rouge bordeaux */
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 14px;
+      border-radius: 4px;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #5f0018;
+    }
+  </style>
+</head>
+<body>
+    <main>
+        <section class="form-section" name="formulaire-demande-test">
+            <h1>Formulaire de demande de test</h1>
+
+            <form action="#" method="post">
+                <label for="cas-test" class="required">Cas de test</label>
+                <details>
+                    <summary>?</summary>
+                    Titre descriptif du but du test (ex: Tester si un utilisateur de tel role, s'il fait tel action).
+                </details>
+                <input type="text" id="cas-test" name="cas-test" required>
+
+                <label for="conditions-prealables" class="required">Conditions préalables</label>
+                <details>
+                    <summary>?</summary>
+                    Liste des élémments nécessaires à l'éxécution du test (ex: Avoir un compte utilisateur de tel role, Avoir accès à tel environnement, une pièce jointe, etc).
+                </details>
+                <textarea id="conditions-prealables" name="conditions-prealables" required></textarea>
+
+                <label for="etapes-cas-test" class="required">Étapes du cas de test</label>
+                <details>
+                    <summary>?</summary>
+                    Liste des étapes explicitesà suivre pour exécuter le test (ex: Cliquer sur le bouton "Se connecter", Saisir les identifiants, etc).
+                </details>
+                <textarea id="etapes-cas-test" name="etapes-cas-test" required></textarea>
+
+                <label for="resultats-attendus" class="required">Résultats attendus</label>
+                <details>
+                    <summary>?</summary>
+                    Description des résultats attendus (ex: L'utilisateur doit être redirigé vers la page d'accueil après une connexion réussie).
+                </details>
+                <textarea id="resultats-attendus" name="resultats-attendus" required></textarea>
+
+                <label for="ko">KO ?</label>
+                <details>
+                    <summary>?</summary>
+                    Motifs peuvent faire échouer le test même avec succès.
+                </details>
+                <textarea id="ko" name="ko"></textarea>
+
+                <button type="submit">Soumettre le cas de test</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

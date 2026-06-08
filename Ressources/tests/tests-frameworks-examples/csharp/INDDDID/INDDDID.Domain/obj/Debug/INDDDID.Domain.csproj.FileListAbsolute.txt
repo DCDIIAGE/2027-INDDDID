@@ -1,0 +1,6 @@
+C:\Users\coppi\source\repos\2027-INDDDID\Ressources\tests\tests-frameworks-examples\csharp\INDDDID\INDDDID.Domain\bin\Debug\INDDDID.Domain.dll
+C:\Users\coppi\source\repos\2027-INDDDID\Ressources\tests\tests-frameworks-examples\csharp\INDDDID\INDDDID.Domain\bin\Debug\INDDDID.Domain.pdb
+C:\Users\coppi\source\repos\2027-INDDDID\Ressources\tests\tests-frameworks-examples\csharp\INDDDID\INDDDID.Domain\obj\Debug\INDDDID.Domain.csproj.AssemblyReference.cache
+C:\Users\coppi\source\repos\2027-INDDDID\Ressources\tests\tests-frameworks-examples\csharp\INDDDID\INDDDID.Domain\obj\Debug\INDDDID.Domain.csproj.CoreCompileInputs.cache
+C:\Users\coppi\source\repos\2027-INDDDID\Ressources\tests\tests-frameworks-examples\csharp\INDDDID\INDDDID.Domain\obj\Debug\INDDDID.Domain.dll
+C:\Users\coppi\source\repos\2027-INDDDID\Ressources\tests\tests-frameworks-examples\csharp\INDDDID\INDDDID.Domain\obj\Debug\INDDDID.Domain.pdb
