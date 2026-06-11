@@ -1,137 +1,277 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Formulaire de demande de test</title>
-  <style>
+<meta charset="UTF-8">
+<title>Formulaires de demande de test – Exemples</title>
+
+<style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 20px;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 20px;
     }
 
     main {
-      background-color: #ffffff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        max-width: 900px;
+        margin-left: 50%;
+        transform: translateX(-50%);
     }
 
-    .form-section {
-      margin-left: 50%;
-      transform: translateX(-50%);
+    /* NAVIGATION */
+    nav {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
     }
 
-    form {
-      max-width: 600px;
+    nav a {
+        padding: 10px 20px;
+        border: 1px solid #800020;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        color: #800020;
+        background: #f4f4f4;
     }
 
+    nav a:hover {
+        background: #ffe6e6;
+    }
+
+    /* Onglet actif basé sur :target */
+    nav a[href="#exemple-correct"]:target,
+    nav a[href="#mauvais-1"]:target,
+    nav a[href="#mauvais-2"]:target {
+        background: #800020;
+        color: white;
+    }
+
+    /* Sections masquées par défaut */
+    section.form-example {
+        display: none;
+    }
+
+    /* Section visible si ciblée */
+    section:target {
+        display: block;
+    }
+
+    /* Section par défaut si aucune cible */
+    body:not(:has(section:target)) #exemple-correct {
+        display: block;
+    }
+
+    /* Formulaire */
     label {
-      display: block;
-      font-weight: bold;
-      margin-top: 15px;
-      margin-bottom: 5px;
+        display: block;
+        font-weight: bold;
+        margin-top: 15px;
+        margin-bottom: 5px;
     }
 
     input[type="text"],
     textarea {
-      width: 100%;
-      padding: 8px;
-      box-sizing: border-box;
-      font-family: inherit;
-      font-size: 14px;
-      border-radius: 8px;
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        font-family: inherit;
+        font-size: 14px;
+        border-radius: 8px;
     }
 
     textarea {
-      min-height: 80px;
-      resize: vertical;
+        min-height: 80px;
+        resize: vertical;
     }
 
     .required::after {
-      content: " *";
-      color: red;
+        content: " *";
+        color: red;
     }
 
     button[type="submit"] {
-      margin-top: 20px;
-      padding: 10px 20px;
-      border: none;
-      cursor: pointer;
-      background-color: #800020; /* rouge bordeaux */
-      color: #ffffff;
-      font-weight: bold;
-      font-size: 14px;
-      border-radius: 4px;
+        margin-top: 20px;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        background-color: #800020;
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 14px;
+        border-radius: 4px;
     }
 
     button[type="submit"]:hover {
-      background-color: #5f0018;
+        background-color: #5f0018;
     }
-  </style>
+
+    /* Erreurs en rouge */
+    .error {
+        color: red;
+        font-weight: bold;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+</style>
+
 </head>
 <body>
-    <main>
-        <section class="form-section" name="formulaire-demande-test">
-            <h1>Formulaire de demande de test</h1>
 
-            <form action="#" method="post">
-                <label for="cas-test" class="required">Cas de test</label>
-                <details>
-                    <summary>?</summary>
-                    Titre descriptif du but du test (ex: Tester si un utilisateur de tel role, s'il fait tel action).
-                </details>
-                <input type="text" id="cas-test" name="cas-test" value="Vérifier le fonctionnement du bouton Supprimer">
+<main>
 
-                <label for="conditions-prealables" class="required">Conditions préalables</label>
-                <details>
-                    <summary>?</summary>
-                    Liste des élémments nécessaires à l'éxécution du test (ex: Avoir un compte utilisateur de tel role, Avoir accès à tel environnement, une pièce jointe, etc).
-                </details>
-                <textarea id="conditions-prealables" name="conditions-prealables" required>
-                    - Être connecté en tant qu'utilisateur avec droits de suppression
-                    - Avoir au moins un élément affiché dans la liste
-                    - Naviguer sur la page de gestion des éléments
-                </textarea>
+    <nav>
+        <a href="#exemple-correct">✔ Exemple correct</a>
+        <a href="#mauvais-1">❌ Mauvais exemple 1</a>
+        <a href="#mauvais-2">❌ Mauvais exemple 2</a>
+    </nav>
 
-                <label for="etapes-cas-test" class="required">Étapes du cas de test</label>
-                <details>
-                    <summary>?</summary>
-                    Liste des étapes explicitesà suivre pour exécuter le test (ex: Cliquer sur le bouton "Se connecter", Saisir les identifiants, etc).
-                </details>
-                <textarea id="etapes-cas-test" name="etapes-cas-test" required>
-                    1. Identifier un élément présent dans la liste
-                    2. Cliquer sur le bouton "Supprimer" associé à cet élément
-                    3. Confirmer la suppression dans la fenêtre de dialogue
-                    4. Observer la mise à jour de la liste
-                </textarea>
+    <!-- ---------------------- -->
+    <!-- 1. EXEMPLE CORRECT -->
+    <!-- ---------------------- -->
+    <section id="exemple-correct" class="form-example">
+        <h1>✔ Formulaire – Exemple correct</h1>
 
-                <label for="resultats-attendus" class="required">Résultats attendus</label>
-                <details>
-                    <summary>?</summary>
-                    Description des résultats attendus (ex: L'utilisateur doit être redirigé vers la page d'accueil après une connexion réussie).
-                </details>
-                <textarea id="resultats-attendus" name="resultats-attendus" required>
-                    - L’élément sélectionné disparaît immédiatement de la liste
-                    - Un message de confirmation de suppression s'affiche
-                    - Aucun autre élément n'est impacté
-                </textarea>
+        <form>
 
-                <label for="ko">KO ?</label>
-                <details>
-                    <summary>?</summary>
-                    Motifs peuvent faire échouer le test même avec succès.
-                </details>
-                <textarea id="ko" name="ko">
-                    - Le bouton ne déclenche aucune action
-                    - Le mauvais élément est supprimé
-                    - Le message de confirmation ne s'affiche pas
-                    - La liste ne se met pas à jour
-                </textarea>
+            <!-- Cas de test -->
+            <label class="required">Cas de test</label>
+            <input type="text" value="Vérifier qu’un utilisateur ayant le rôle Gestionnaire peut supprimer un article depuis la page de gestion des articles.">
+            <div style="color:green; font-weight:bold; margin:5px 0 15px;">
+                ✔ Le cas de test est précis : il indique l’action, le rôle, l’objet et le contexte.<br>
+                ✔ On sait exactement ce qui est testé, sans ambiguïté.
+            </div>
 
-                <button type="submit">Soumettre le cas de test</button>
-            </form>
-        </section>
-    </main>
+            <!-- Conditions préalables -->
+            <label class="required">Conditions préalables</label>
+            <textarea>
+    - Être connecté en tant qu’utilisateur avec le rôle Gestionnaire
+    - Avoir au moins un article existant dans la base de test
+    - Être sur un environnement de test
+            </textarea>
+            <div style="color:green; font-weight:bold; margin:5px 0 15px;">
+                ✔ Ce sont de vraies préconditions : rôle, données, environnement.<br>
+                ✔ Rien ici n’est une étape du test (pas de navigation, pas d’action).
+            </div>
+
+            <!-- Étapes -->
+            <label class="required">Étapes du cas de test</label>
+            <textarea>
+    1. Se connecter avec un compte ayant le rôle Gestionnaire
+    2. Accéder à la page “Gestion des articles” depuis l'URL (https://test.example.com/admin/articles)
+    3. Identifier un article existant dans la liste
+    4. Cliquer sur le bouton “Supprimer” associé à cet article
+    5. Confirmer la suppression dans la fenêtre de dialogue
+    6. Observer la mise à jour de la liste
+            </textarea>
+            <div style="color:green; font-weight:bold; margin:5px 0 15px;">
+                ✔ Les étapes sont détaillées, séquentielles et reproductibles.<br>
+                ✔ N’importe qui peut exécuter ce test sans poser de questions.<br>
+                ✔ Aucune étape implicite ou manquante.
+            </div>
+
+            <!-- Résultats attendus -->
+            <label class="required">Résultats attendus</label>
+            <textarea>
+    - L’article sélectionné disparaît immédiatement de la liste
+    - Un message de confirmation “Article supprimé” s'affiche
+    - Aucun autre article n'est modifié
+    - L’ID de l’article supprimé n’existe plus en base de test
+            </textarea>
+            <div style="color:green; font-weight:bold; margin:5px 0 15px;">
+                ✔ Les résultats sont observables, mesurables et non subjectifs.<br>
+                ✔ On peut vérifier le comportement visuel ET la donnée métier.
+            </div>
+
+            <!-- KO -->
+            <label>KO ?</label>
+            <textarea>
+    - Le bouton ne déclenche aucune action
+    - Un autre article est supprimé
+    - Le message de confirmation ne s'affiche pas
+    - L’article réapparaît après rafraîchissement
+    - Une erreur technique apparaît
+            </textarea>
+            <div style="color:green; font-weight:bold; margin:5px 0 15px;">
+                ✔ Les KO couvrent les risques fonctionnels réels.<br>
+                ✔ Ils permettent d’identifier rapidement un comportement anormal.
+            </div>
+
+        </form>
+    </section>
+
+
+    <!-- ---------------------- -->
+    <!-- 2. MAUVAIS EXEMPLE 1 -->
+    <!-- ---------------------- -->
+    <section id="mauvais-1" class="form-example">
+        <h1>❌ Mauvais exemple 1 – Étapes trop vagues</h1>
+
+        <form>
+            <label class="required">Cas de test</label>
+            <input type="text" value="Tester la suppression">
+            <div class="error">❌ Titre trop vague : on ne sait pas qui supprime quoi, ni dans quel contexte.</div>
+
+            <label class="required">Conditions préalables</label>
+            <textarea>Être connecté</textarea>
+            <div class="error">❌ Trop vague : quel rôle ? quel environnement ? quelles données ?</div>
+
+            <label class="required">Étapes du cas de test</label>
+            <textarea>
+1. Aller sur la page
+2. Supprimer un truc
+            </textarea>
+            <div class="error">❌ Étapes inutilisables : aucune précision, impossible de reproduire le test.</div>
+
+            <label class="required">Résultats attendus</label>
+            <textarea>Ça marche</textarea>
+            <div class="error">❌ Résultat non mesurable : “ça marche” ne veut rien dire.</div>
+
+            <label>KO ?</label>
+            <textarea>Si ça marche pas</textarea>
+            <div class="error">❌ KO inutile : ne donne aucune information exploitable.</div>
+        </form>
+    </section>
+
+    <!-- ---------------------- -->
+    <!-- 3. MAUVAIS EXEMPLE 2 -->
+    <!-- ---------------------- -->
+    <section id="mauvais-2" class="form-example">
+        <h1>❌ Mauvais exemple 2 – Dépendance à la production + incohérences</h1>
+
+        <form>
+            <label class="required">Cas de test</label>
+            <input type="text" value="Supprimer l'utilisateur 123 en production">
+            <div class="error">❌ Interdit : ne jamais utiliser un utilisateur réel ou un ID de production.</div>
+
+            <label class="required">Conditions préalables</label>
+            <textarea>
+- Utilisateur 123 existant en production
+- Avoir accès root à la base
+            </textarea>
+            <div class="error">❌ Dépendance à la prod + ❌ accès dangereux + ❌ données non contrôlées.</div>
+
+            <label class="required">Étapes du cas de test</label>
+            <textarea>
+1. Aller dans la base de données
+2. Supprimer la ligne
+            </textarea>
+            <div class="error">❌ Ce n’est pas un test fonctionnel : c’est une manipulation technique.</div>
+
+            <label class="required">Résultats attendus</label>
+            <textarea>L'utilisateur n'existe plus</textarea>
+            <div class="error">❌ Résultat incomplet : aucun critère observable côté application.</div>
+
+            <label>KO ?</label>
+            <textarea>Si la base plante</textarea>
+            <div class="error">❌ KO non pertinent : ne décrit pas un échec fonctionnel.</div>
+        </form>
+    </section>
+
+</main>
+
 </body>
 </html>
