@@ -24,6 +24,7 @@
     /* NAVIGATION */
     nav {
         display: flex;
+        flex-wrap: wrap;
         gap: 10px;
         margin-bottom: 20px;
     }
@@ -42,14 +43,6 @@
         background: #ffe6e6;
     }
 
-    /* Onglet actif basé sur :target */
-    nav a[href="#exemple-correct"]:target,
-    nav a[href="#mauvais-1"]:target,
-    nav a[href="#mauvais-2"]:target {
-        background: #800020;
-        color: white;
-    }
-
     /* Sections masquées par défaut */
     section.form-example {
         display: none;
@@ -61,7 +54,7 @@
     }
 
     /* Section par défaut si aucune cible */
-    body:not(:has(section:target)) #exemple-correct {
+    body:not(:has(section:target)) #exemple-e2e {
         display: block;
     }
 
@@ -93,28 +86,16 @@
         color: red;
     }
 
-    button[type="submit"] {
-        margin-top: 20px;
-        padding: 10px 20px;
-        border: none;
-        cursor: pointer;
-        background-color: #800020;
-        color: #ffffff;
-        font-weight: bold;
-        font-size: 14px;
-        border-radius: 4px;
-    }
-
-    button[type="submit"]:hover {
-        background-color: #5f0018;
-    }
-
-    /* Erreurs en rouge */
     .error {
         color: red;
         font-weight: bold;
-        margin-top: 5px;
-        margin-bottom: 10px;
+        margin: 5px 0 15px;
+    }
+
+    .good {
+        color: green;
+        font-weight: bold;
+        margin: 5px 0 15px;
     }
 </style>
 
@@ -124,88 +105,192 @@
 <main>
 
     <nav>
-        <a href="#exemple-correct">✔ Exemple correct</a>
+        <a href="#exemple-e2e">✔ Test E2E</a>
+        <a href="#exemple-integration">✔ Test d’intégration</a>
+        <a href="#exemple-unitaire">✔ Test unitaire</a>
         <a href="#mauvais-1">❌ Mauvais exemple 1</a>
         <a href="#mauvais-2">❌ Mauvais exemple 2</a>
+        <a href="#mauvais-3">❌ Mauvais exemple 3 (unitaire)</a>
     </nav>
 
     <!-- ---------------------- -->
-    <!-- 1. EXEMPLE CORRECT -->
+    <!-- 1. EXEMPLE CORRECT – TEST E2E -->
     <!-- ---------------------- -->
-    <section id="exemple-correct" class="form-example">
-        <h1>✔ Formulaire – Exemple correct</h1>
+    <section id="exemple-e2e" class="form-example">
+        <h1>✔ Exemple correct – Test E2E</h1>
 
         <form>
 
-            <!-- Cas de test -->
             <label class="required">Cas de test</label>
-            <input type="text" value="Vérifier qu’un utilisateur ayant le rôle Gestionnaire peut supprimer un article depuis la page de gestion des articles.">
-            <div style="color:green; font-weight:bold; margin:5px 0 15px;">
-                ✔ Le cas de test est précis : il indique l’action, le rôle, l’objet et le contexte.<br>
-                ✔ On sait exactement ce qui est testé, sans ambiguïté.
+            <input type="text" value="Vérifier qu’un utilisateur Gestionnaire peut supprimer un article depuis l’interface.">
+            <div class="good">
+                ✔ Test orienté utilisateur final (E2E).<br>
+                ✔ Décrit l’objectif métier, pas la technique.
             </div>
 
-            <!-- Conditions préalables -->
             <label class="required">Conditions préalables</label>
             <textarea>
-    - Être connecté en tant qu’utilisateur avec le rôle Gestionnaire
-    - Avoir au moins un article existant dans la base de test
-    - Être sur un environnement de test
+- Compte utilisateur avec rôle Gestionnaire
+- Au moins un article existant en base de test
+- Navigateur ouvert sur l’environnement de test
             </textarea>
-            <div style="color:green; font-weight:bold; margin:5px 0 15px;">
-                ✔ Ce sont de vraies préconditions : rôle, données, environnement.<br>
-                ✔ Rien ici n’est une étape du test (pas de navigation, pas d’action).
+            <div class="good">
+                ✔ Préconditions réalistes et reproductibles.<br>
+                ✔ Pas d’étapes cachées.
             </div>
 
-            <!-- Étapes -->
-            <label class="required">Étapes du cas de test</label>
+            <label class="required">Étapes</label>
             <textarea>
-    1. Se connecter avec un compte ayant le rôle Gestionnaire
-    2. Accéder à la page “Gestion des articles” depuis l'URL (https://test.example.com/admin/articles)
-    3. Identifier un article existant dans la liste
-    4. Cliquer sur le bouton “Supprimer” associé à cet article
-    5. Confirmer la suppression dans la fenêtre de dialogue
-    6. Observer la mise à jour de la liste
+1. Se connecter avec un compte Gestionnaire
+2. Accéder à https://test.example.com/admin/articles
+3. Identifier un article existant
+4. Cliquer sur “Supprimer”
+5. Confirmer la suppression
+6. Observer la mise à jour de la liste
             </textarea>
-            <div style="color:green; font-weight:bold; margin:5px 0 15px;">
-                ✔ Les étapes sont détaillées, séquentielles et reproductibles.<br>
-                ✔ N’importe qui peut exécuter ce test sans poser de questions.<br>
-                ✔ Aucune étape implicite ou manquante.
+            <div class="good">
+                ✔ Étapes détaillées, séquentielles, compréhensibles.<br>
+                ✔ Reproductible par n’importe qui.
             </div>
 
-            <!-- Résultats attendus -->
             <label class="required">Résultats attendus</label>
             <textarea>
-    - L’article sélectionné disparaît immédiatement de la liste
-    - Un message de confirmation “Article supprimé” s'affiche
-    - Aucun autre article n'est modifié
-    - L’ID de l’article supprimé n’existe plus en base de test
+- L’article disparaît de la liste
+- Message “Article supprimé” affiché
+- Aucun autre article modifié
+- L’article n’existe plus en base de test
             </textarea>
-            <div style="color:green; font-weight:bold; margin:5px 0 15px;">
-                ✔ Les résultats sont observables, mesurables et non subjectifs.<br>
-                ✔ On peut vérifier le comportement visuel ET la donnée métier.
+            <div class="good">
+                ✔ Résultats mesurables et vérifiables.
             </div>
 
-            <!-- KO -->
             <label>KO ?</label>
             <textarea>
-    - Le bouton ne déclenche aucune action
-    - Un autre article est supprimé
-    - Le message de confirmation ne s'affiche pas
-    - L’article réapparaît après rafraîchissement
-    - Une erreur technique apparaît
+- Aucun effet après clic
+- Mauvais article supprimé
+- Message non affiché
+- Erreur technique
             </textarea>
-            <div style="color:green; font-weight:bold; margin:5px 0 15px;">
-                ✔ Les KO couvrent les risques fonctionnels réels.<br>
-                ✔ Ils permettent d’identifier rapidement un comportement anormal.
+            <div class="good">
+                ✔ KO pertinents et réalistes.
             </div>
 
         </form>
     </section>
 
+    <!-- ---------------------- -->
+    <!-- 2. EXEMPLE CORRECT – TEST D’INTÉGRATION -->
+    <!-- ---------------------- -->
+    <section id="exemple-integration" class="form-example">
+        <h1>✔ Exemple correct – Test d’intégration</h1>
+
+        <form>
+
+            <label class="required">Cas de test</label>
+            <input type="text" value="Vérifier que l’API /articles/{id}/delete supprime correctement un article en base.">
+            <div class="good">
+                ✔ Test orienté API / backend.<br>
+                ✔ On teste l’intégration entre contrôleur + service + base.
+            </div>
+
+            <label class="required">Conditions préalables</label>
+            <textarea>
+- Base de test initialisée avec un article ID=42
+- Serveur API démarré sur http://localhost:5000
+- Token d’authentification valide
+            </textarea>
+            <div class="good">
+                ✔ Préconditions techniques, adaptées à un test d’intégration.
+            </div>
+
+            <label class="required">Étapes</label>
+            <textarea>
+1. Envoyer une requête DELETE sur /articles/42
+2. Vérifier le code HTTP 200
+3. Envoyer GET /articles/42
+4. Vérifier que l’article n’existe plus
+            </textarea>
+            <div class="good">
+                ✔ Étapes techniques, précises, adaptées à un test d’intégration.
+            </div>
+
+            <label class="required">Résultats attendus</label>
+            <textarea>
+- DELETE retourne 200
+- GET retourne 404
+- L’article est supprimé en base
+            </textarea>
+            <div class="good">
+                ✔ Résultats mesurables, orientés API.
+            </div>
+
+            <label>KO ?</label>
+            <textarea>
+- DELETE retourne 500
+- L’article existe encore après suppression
+- La base renvoie une erreur
+            </textarea>
+            <div class="good">
+                ✔ KO adaptés à un test d’intégration.
+            </div>
+
+        </form>
+    </section>
 
     <!-- ---------------------- -->
-    <!-- 2. MAUVAIS EXEMPLE 1 -->
+    <!-- 3. EXEMPLE CORRECT – TEST UNITAIRE -->
+    <!-- ---------------------- -->
+    <section id="exemple-unitaire" class="form-example">
+        <h1>✔ Exemple correct – Test unitaire</h1>
+
+        <form>
+
+            <label class="required">Cas de test</label>
+            <input type="text" value="Vérifier que la méthode Add(a,b) retourne la somme correcte.">
+            <div class="good">
+                ✔ Test d’une méthode isolée.<br>
+                ✔ Aucun accès externe (base, API, UI).
+            </div>
+
+            <label class="required">Conditions préalables</label>
+            <textarea>
+- Aucune dépendance externe
+- Instancier CalculatorService
+            </textarea>
+            <div class="good">
+                ✔ Préconditions minimales, car test unitaire pur.
+            </div>
+
+            <label class="required">Étapes</label>
+            <textarea>
+1. Appeler Add(2,3)
+2. Récupérer le résultat
+            </textarea>
+            <div class="good">
+                ✔ Étapes simples, directes, sans contexte inutile.
+            </div>
+
+            <label class="required">Résultats attendus</label>
+            <textarea>
+- Le résultat doit être égal à 5
+            </textarea>
+            <div class="good">
+                ✔ Résultat clair, mesurable, déterministe.
+            </div>
+
+            <label>KO ?</label>
+            <textarea>
+- Le résultat n’est pas correct
+            </textarea>
+            <div class="good">
+                ✔ KO minimal mais pertinent.
+            </div>
+
+        </form>
+    </section>
+
+    <!-- ---------------------- -->
+    <!-- 4. MAUVAIS EXEMPLE 1 -->
     <!-- ---------------------- -->
     <section id="mauvais-1" class="form-example">
         <h1>❌ Mauvais exemple 1 – Étapes trop vagues</h1>
@@ -213,61 +298,96 @@
         <form>
             <label class="required">Cas de test</label>
             <input type="text" value="Tester la suppression">
-            <div class="error">❌ Titre trop vague : on ne sait pas qui supprime quoi, ni dans quel contexte.</div>
+            <div class="error">❌ Trop vague : on ne sait pas quoi, où, ni comment.</div>
 
             <label class="required">Conditions préalables</label>
             <textarea>Être connecté</textarea>
-            <div class="error">❌ Trop vague : quel rôle ? quel environnement ? quelles données ?</div>
+            <div class="error">❌ Quel rôle ? Quel environnement ? Quelles données ?</div>
 
-            <label class="required">Étapes du cas de test</label>
+            <label class="required">Étapes</label>
             <textarea>
 1. Aller sur la page
 2. Supprimer un truc
             </textarea>
-            <div class="error">❌ Étapes inutilisables : aucune précision, impossible de reproduire le test.</div>
+            <div class="error">❌ Impossible à reproduire.</div>
 
             <label class="required">Résultats attendus</label>
             <textarea>Ça marche</textarea>
-            <div class="error">❌ Résultat non mesurable : “ça marche” ne veut rien dire.</div>
+            <div class="error">❌ Non mesurable.</div>
 
             <label>KO ?</label>
             <textarea>Si ça marche pas</textarea>
-            <div class="error">❌ KO inutile : ne donne aucune information exploitable.</div>
+            <div class="error">❌ Inutile.</div>
         </form>
     </section>
 
     <!-- ---------------------- -->
-    <!-- 3. MAUVAIS EXEMPLE 2 -->
+    <!-- 5. MAUVAIS EXEMPLE 2 -->
     <!-- ---------------------- -->
     <section id="mauvais-2" class="form-example">
-        <h1>❌ Mauvais exemple 2 – Dépendance à la production + incohérences</h1>
+        <h1>❌ Mauvais exemple 2 – Dépendance à la production</h1>
 
         <form>
             <label class="required">Cas de test</label>
             <input type="text" value="Supprimer l'utilisateur 123 en production">
-            <div class="error">❌ Interdit : ne jamais utiliser un utilisateur réel ou un ID de production.</div>
+            <div class="error">❌ Interdit : jamais de données réelles.</div>
 
             <label class="required">Conditions préalables</label>
             <textarea>
-- Utilisateur 123 existant en production
-- Avoir accès root à la base
+- Utilisateur réel en production
+- Accès root
             </textarea>
-            <div class="error">❌ Dépendance à la prod + ❌ accès dangereux + ❌ données non contrôlées.</div>
+            <div class="error">❌ Dangereux + non reproductible.</div>
 
-            <label class="required">Étapes du cas de test</label>
+            <label class="required">Étapes</label>
             <textarea>
-1. Aller dans la base de données
+1. Aller dans la base
 2. Supprimer la ligne
             </textarea>
-            <div class="error">❌ Ce n’est pas un test fonctionnel : c’est une manipulation technique.</div>
+            <div class="error">❌ Ce n’est pas un test fonctionnel.</div>
 
             <label class="required">Résultats attendus</label>
             <textarea>L'utilisateur n'existe plus</textarea>
-            <div class="error">❌ Résultat incomplet : aucun critère observable côté application.</div>
+            <div class="error">❌ Aucun critère observable côté application.</div>
 
             <label>KO ?</label>
             <textarea>Si la base plante</textarea>
-            <div class="error">❌ KO non pertinent : ne décrit pas un échec fonctionnel.</div>
+            <div class="error">❌ Non pertinent.</div>
+        </form>
+    </section>
+
+    <!-- ---------------------- -->
+    <!-- 6. MAUVAIS EXEMPLE 3 – TEST UNITAIRE -->
+    <!-- ---------------------- -->
+    <section id="mauvais-3" class="form-example">
+        <h1>❌ Mauvais exemple 3 – Mauvais test unitaire</h1>
+
+        <form>
+            <label class="required">Cas de test</label>
+            <input type="text" value="Tester la méthode Add">
+            <div class="error">❌ Trop vague : aucun cas précis.</div>
+
+            <label class="required">Conditions préalables</label>
+            <textarea>
+- Base de données démarrée
+- API en ligne
+            </textarea>
+            <div class="error">❌ Un test unitaire ne doit JAMAIS dépendre d’une base ou d’une API.</div>
+
+            <label class="required">Étapes</label>
+            <textarea>
+1. Appeler Add
+2. Voir ce que ça fait
+            </textarea>
+            <div class="error">❌ Pas de valeurs, pas de vérification.</div>
+
+            <label class="required">Résultats attendus</label>
+            <textarea>Ça doit marcher</textarea>
+            <div class="error">❌ Non mesurable.</div>
+
+            <label>KO ?</label>
+            <textarea>Si ça marche pas</textarea>
+            <div class="error">❌ Aucun intérêt.</div>
         </form>
     </section>
 
