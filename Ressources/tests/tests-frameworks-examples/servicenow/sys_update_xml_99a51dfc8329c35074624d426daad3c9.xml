@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <unload unload_date="2026-06-15 17:05:44">
-<sys_update_xml action="INSERT_OR_UPDATE">
-<action>INSERT_OR_UPDATE</action>
-<application display_value="Global">global</application>
-<category>customer</category>
-<comments/>
-<name>sys_atf_step_98cd49bc83e5c35074624d426daad32a</name>
-<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step"><sys_atf_step action="INSERT_OR_UPDATE"><active>true</active><callable_outputs/><copied_from/><description>Log: Status: {{Step 3: Call API - Generic.Response Status}}&#13;
+    <sys_update_xml action="INSERT_OR_UPDATE">
+        <action>INSERT_OR_UPDATE</action>
+        <application display_value="Global">global</application>
+        <category>customer</category>
+        <comments />
+        <name>sys_atf_step_98cd49bc83e5c35074624d426daad32a</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step"><sys_atf_step action="INSERT_OR_UPDATE"><active>true</active><callable_outputs/><copied_from/><description>Log: Status: {{Step 3: Call API - Generic.Response Status}}&#13;
 &#13;
 Headers: {{Step 3: Call API - Generic.Response Header}}&#13;
 Body: {{Step 3: Call API - Generic.Response Body}}</description><display_name>Log</display_name><inputs/><inputs/><mugshots_cache_json/><notes>Log réponse API.</notes><order>4</order><step_config display_value="Log">58ab71985f30220012b44adb7f46661e</step_config><sys_class_name>sys_atf_step</sys_class_name><sys_created_by>diego.coppin</sys_created_by><sys_created_on>2026-06-15 16:22:51</sys_created_on><sys_id>98cd49bc83e5c35074624d426daad32a</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Log</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_atf_step_98cd49bc83e5c35074624d426daad32a</sys_update_name><sys_updated_by>diego.coppin</sys_updated_by><sys_updated_on>2026-06-15 16:22:51</sys_updated_on><table/><test display_value="Vérifier que la route API de calcul, retourne un résultat d'addition">145c8db483e5c35074624d426daad3df</test><timeout/><warning_message/></sys_atf_step><sys_variable_value action="delete_multiple" query="document_key=98cd49bc83e5c35074624d426daad32a"/><sys_variable_value action="INSERT_OR_UPDATE"><document>sys_atf_step</document><document_key>98cd49bc83e5c35074624d426daad32a</document_key><order>100</order><sys_class_name>sys_variable_value</sys_class_name><sys_created_by>diego.coppin</sys_created_by><sys_created_on>2026-06-15 16:22:51</sys_created_on><sys_id>ca0ec1fc83e5c35074624d426daad380</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>diego.coppin</sys_updated_by><sys_updated_on>2026-06-15 16:22:51</sys_updated_on><value>Status: {{step['451d49f883e5c35074624d426daad38a'].u_response_status}}&#13;
@@ -16,23 +16,24 @@ Body: {{step['451d49f883e5c35074624d426daad38a'].u_response_body}}</value><varia
 &#13;
 Headers: {{step['451d49f883e5c35074624d426daad38a'].u_response_header}}&#13;
 Body: {{step['451d49f883e5c35074624d426daad38a'].u_response_body}}</value></sys_element_mapping></record_update>]]></payload>
-<payload_hash>-1343759355</payload_hash>
-<remote_update_set display_value=""/>
-<replace_on_upgrade>false</replace_on_upgrade>
-<sys_created_by>diego.coppin</sys_created_by>
-<sys_created_on>2026-06-15 16:56:07</sys_created_on>
-<sys_id>99a51dfc8329c35074624d426daad3c9</sys_id>
-<sys_mod_count>0</sys_mod_count>
-<sys_recorded_at>19ecc363f580000001</sys_recorded_at>
-<sys_updated_by>diego.coppin</sys_updated_by>
-<sys_updated_on>2026-06-15 16:56:07</sys_updated_on>
-<table/>
-<target_name>Log</target_name>
-<type>Test Step</type>
-<update_domain>global</update_domain>
-<update_guid>d1a51dfc1129c350d439b7c9ea8398c9</update_guid>
-<update_guid_history>d1a51dfc1129c350d439b7c9ea8398c9:-1343759355,820ec1fc15e5c350fabc04805d5e7183:-1343759355</update_guid_history>
-<update_set display_value="INDDDID">4534d5788329c35074624d426daad3b5</update_set>
-<view/>
-</sys_update_xml>
+        <payload_hash>-1343759355</payload_hash>
+        <remote_update_set display_value="" />
+        <replace_on_upgrade>false</replace_on_upgrade>
+        <sys_created_by>diego.coppin</sys_created_by>
+        <sys_created_on>2026-06-15 16:56:07</sys_created_on>
+        <sys_id>99a51dfc8329c35074624d426daad3c9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19ecc363f580000001</sys_recorded_at>
+        <sys_updated_by>diego.coppin</sys_updated_by>
+        <sys_updated_on>2026-06-15 16:56:07</sys_updated_on>
+        <table />
+        <target_name>Log</target_name>
+        <type>Test Step</type>
+        <update_domain>global</update_domain>
+        <update_guid>d1a51dfc1129c350d439b7c9ea8398c9</update_guid>
+        <update_guid_history>
+            d1a51dfc1129c350d439b7c9ea8398c9:-1343759355,820ec1fc15e5c350fabc04805d5e7183:-1343759355</update_guid_history>
+        <update_set display_value="INDDDID">4534d5788329c35074624d426daad3b5</update_set>
+        <view />
+    </sys_update_xml>
 </unload>
