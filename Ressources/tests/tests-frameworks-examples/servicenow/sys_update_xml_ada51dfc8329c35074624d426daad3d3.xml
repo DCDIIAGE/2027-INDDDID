@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2026-06-15 17:06:13">
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>atf_input_variable_9815bf958351831074624d426daad326</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="atf_input_variable"&gt;&lt;atf_input_variable action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;attributes&gt;element_mapping_provider=com.glide.automated_testing_framework.ATFVariableElementMapper&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label&gt;Headers&lt;/column_label&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;u_headers&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_type display_value="String"&gt;string&lt;/internal_type&gt;&lt;label&gt;Headers&lt;/label&gt;&lt;mandatory&gt;false&lt;/mandatory&gt;&lt;max_length&gt;4096&lt;/max_length&gt;&lt;model display_value="Call API - Generic"&gt;0060f39183dd431074624d426daad327&lt;/model&gt;&lt;model_id&gt;0060f39183dd431074624d426daad327&lt;/model_id&gt;&lt;model_table/&gt;&lt;name&gt;var__m_atf_input_variable_0060f39183dd431074624d426daad327&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;300&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_only_option/&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;atf_input_variable&lt;/sys_class_name&gt;&lt;sys_created_by&gt;diego.coppin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-06-05 07:35:08&lt;/sys_created_on&gt;&lt;sys_id&gt;9815bf958351831074624d426daad326&lt;/sys_id&gt;&lt;sys_name&gt;Headers&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;atf_input_variable_9815bf958351831074624d426daad326&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;diego.coppin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-06-05 07:37:56&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/atf_input_variable&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id element="u_headers" name="var__m_atf_input_variable_0060f39183dd431074624d426daad327" table="atf_input_variable"&gt;9815bf958351831074624d426daad326&lt;/id&gt;&lt;sys_created_by&gt;diego.coppin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-06-05 07:35:08&lt;/sys_created_on&gt;&lt;sys_id&gt;ee5533598351831074624d426daad391&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;diego.coppin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-06-05 07:35:08&lt;/sys_updated_on&gt;&lt;table&gt;atf_input_variable&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+<payload_hash>198170854</payload_hash>
+<remote_update_set display_value=""/>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>diego.coppin</sys_created_by>
+<sys_created_on>2026-06-15 16:56:07</sys_created_on>
+<sys_id>ada51dfc8329c35074624d426daad3d3</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ecc363ff90000001</sys_recorded_at>
+<sys_updated_by>diego.coppin</sys_updated_by>
+<sys_updated_on>2026-06-15 16:56:07</sys_updated_on>
+<table/>
+<target_name>Headers</target_name>
+<type>Input Variables</type>
+<update_domain>global</update_domain>
+<update_guid>e5a51dfc1329c350f90d6d67085f7ad3</update_guid>
+<update_guid_history>e5a51dfc1329c350f90d6d67085f7ad3:198170854,2ff5b75d0b518310ad98c5bf821825e6:198170854,b1e53f1dc65183109c1f41acea9ccda0:-2124285145,01753f59385183104a333c416adaf28a:-213637069,625533590f5183103ab8fe649ae024d9:-1691795282,26553359f75183109579413e7f360bd4:1680819573,265533598d5183103f166de1003c8bce:-1691795282</update_guid_history>
+<update_set display_value="INDDDID">4534d5788329c35074624d426daad3b5</update_set>
+<view/>
+</sys_update_xml>
+</unload>

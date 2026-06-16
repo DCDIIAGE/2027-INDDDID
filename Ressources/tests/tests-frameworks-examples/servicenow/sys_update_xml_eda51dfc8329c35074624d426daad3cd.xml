@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2026-06-15 17:08:39">
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_atf_step_config_0060f39183dd431074624d426daad327</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_atf_step_config"&gt;&lt;sys_atf_step_config action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;batch_order_constraint/&gt;&lt;can_mutate_page&gt;false&lt;/can_mutate_page&gt;&lt;category display_value="Server"&gt;317c4dc20b202200a8d7a12cf6673aa8&lt;/category&gt;&lt;class_name/&gt;&lt;class_type&gt;script&lt;/class_type&gt;&lt;deprecated&gt;false&lt;/deprecated&gt;&lt;description_generator&gt;&lt;![CDATA[function generateDescription() {
+    // the global variable 'step' represents the current glide record
+    var description = "";
+	// your code here
+	return description;
+}
+ generateDescription();
+]]&gt;&lt;/description_generator&gt;&lt;html_description&gt;&lt;![CDATA[&lt;p&gt;Appel api vers les truc en entrée.&lt;/p&gt;]]&gt;&lt;/html_description&gt;&lt;icon&gt;icon-article-document&lt;/icon&gt;&lt;inputs/&gt;&lt;name&gt;Call API - Generic&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;outputs/&gt;&lt;performance_include&gt;false&lt;/performance_include&gt;&lt;step_env display_value="Server - Independent"&gt;6c2bcea1870312009dccc9ded0e3ecca&lt;/step_env&gt;&lt;step_execution_generator&gt;&lt;![CDATA[(function executeStep(inputs, outputs, stepResult, timeout) {
+	var url = inputs.u_url;
+    var method = inputs.u_method;
+    var headersStr = inputs.u_headers;
+    var bodyStr = inputs.u_body;
+ 
+    try {
+        var request = new sn_ws.RESTMessageV2();
+        request.setEndpoint(url);
+        request.setHttpMethod(method);
+ 
+        var contentType = "";
+ 
+        // 1. Envoi des Headers tels quels
+        if (headersStr) {
+            try {
+                var headersObj = JSON.parse(headersStr.trim());
+                for (var key in headersObj) {
+                    if (headersObj.hasOwnProperty(key)) {
+                        request.setRequestHeader(key, headersObj[key]);
+                        if (key.toLowerCase() === 'content-type') {
+                            contentType = headersObj[key].toLowerCase();
+                        }
+                    }
+                }
+            } catch (e) {
+                stepResult.setOutputMessage("Échec du parsing JSON des Headers : " + e.message);
+                stepResult.setFailed();
+                return;
+            }
+        }
+ 
+        // 2. Gestion du Body sans sur-encodage agressif
+        if (bodyStr &amp;&amp; bodyStr.trim() !== "") {
+            
+            // Si l'utilisateur demande explicitement du form-urlencoded ET a fourni du JSON
+            if (contentType.indexOf('application/x-www-form-urlencoded') !== -1) {
+                try {
+                    var bodyJson = JSON.parse(bodyStr);
+                    var formComponents = [];
+                    
+                    for (var prop in bodyJson) {
+                        if (bodyJson.hasOwnProperty(prop)) {
+                            // On construit la chaîne clé=valeur classique (comme le fait Postman dans l'onglet Body)
+                            formComponents.push(prop + "=" + bodyJson[prop]);
+                        }
+                    }
+                    request.setRequestBody(formComponents.join("&amp;"));
+                    
+                } catch (jsonError) {
+                    // Si ce n'est pas du JSON, on envoie le texte brut saisi par l'utilisateur
+                    request.setRequestBody(bodyStr.trim());
+                }
+            } else {
+                // Pour application/json ou autre format, on envoie le bloc brut
+                request.setRequestBody(bodyStr);
+            }
+        }
+ 
+        // 3. Exécution
+        var response = request.execute();
+        
+        // 4. Sorties
+        var respBody = response.getBody();
+        var respStatus = response.getStatusCode();
+        var respHeadersStr = JSON.stringify(response.getHeaders());
+ 
+        outputs.u_response_body = respBody;
+        outputs.u_response_status = String(respStatus);
+        outputs.u_response_header = respHeadersStr;
+ 
+        if (respStatus) {
+            stepResult.setOutputMessage("Requête exécutée. Statut reçu : " + respStatus);
+            stepResult.setSuccess();
+        } else {
+            stepResult.setOutputMessage("Pas de réponse du serveur (Statut vide).");
+            stepResult.setFailed();
+        }
+ 
+    } catch (ex) {
+        stepResult.setOutputMessage("Erreur système script : " + ex.message);
+        stepResult.setFailed();
+    }
+}(inputs, outputs, stepResult, timeout));
+]]&gt;&lt;/step_execution_generator&gt;&lt;sys_class_name&gt;sys_atf_step_config&lt;/sys_class_name&gt;&lt;sys_created_by&gt;diego.coppin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-06-05 07:29:52&lt;/sys_created_on&gt;&lt;sys_id&gt;0060f39183dd431074624d426daad327&lt;/sys_id&gt;&lt;sys_mod_count&gt;9&lt;/sys_mod_count&gt;&lt;sys_name&gt;Call API - Generic&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_atf_step_config_0060f39183dd431074624d426daad327&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;diego.coppin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-06-05 12:12:14&lt;/sys_updated_on&gt;&lt;template_reminder&gt;Appel API vers l'URL spécifié.&lt;/template_reminder&gt;&lt;type display_value="Test Step" name="sys_atf_step"&gt;b6b3a3d71b452010768c1062b24bcb06&lt;/type&gt;&lt;wizard_redirect/&gt;&lt;/sys_atf_step_config&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=0060f39183dd431074624d426daad327"/&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=0060f39183dd431074624d426daad327"/&gt;&lt;sys_element_mapping action="delete_multiple" query="table=var__m_atf_input_variable_0060f39183dd431074624d426daad327^id=0060f39183dd431074624d426daad327"/&gt;&lt;sys_element_mapping action="delete_multiple" query="table=var__m_atf_output_variable_0060f39183dd431074624d426daad327^id=0060f39183dd431074624d426daad327"/&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id&gt;0060f39183dd431074624d426daad327&lt;/id&gt;&lt;sys_created_by&gt;diego.coppin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-06-05 07:29:51&lt;/sys_created_on&gt;&lt;sys_id&gt;05247b5d8311831074624d426daad3ff&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;diego.coppin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-06-05 07:29:51&lt;/sys_updated_on&gt;&lt;table&gt;sys_atf_step_config&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-801334493</payload_hash>
+<remote_update_set display_value=""/>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>diego.coppin</sys_created_by>
+<sys_created_on>2026-06-15 16:56:07</sys_created_on>
+<sys_id>eda51dfc8329c35074624d426daad3cd</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_recorded_at>19ecc39d83b0000001</sys_recorded_at>
+<sys_updated_by>diego.coppin</sys_updated_by>
+<sys_updated_on>2026-06-15 17:00:03</sys_updated_on>
+<table/>
+<target_name>Call API - Generic</target_name>
+<type>Test Step Config</type>
+<update_domain>global</update_domain>
+<update_guid>0f869d705969c3508a0dd5e9c251a195</update_guid>
+<update_guid_history>0f869d705969c3508a0dd5e9c251a195:-801334493,25c4f8ed63dd83102355900e5c1945b1:-801334493,9884f8adc1dd8310ceb09740880e0e80:972045697,203130ed219d8310397c5896dbb5558d:-1183611428,21f890a181d983106bc369adb0f5604b:-569066162,16a89461aed9831032202c27186fc3ec:-1418442900,bdd550695699831004c146082203ee57:-1561237690,42655029cc998310a64b77d8f285591a:1444797820,82a9b359f5d183105e06db12bbbb5467:396362223,5597f39946918310dfa491a46699c5dd:352397250,8924779de51183100ef98c1f9f7acc20:1345859626</update_guid_history>
+<update_set display_value="INDDDID">4534d5788329c35074624d426daad3b5</update_set>
+<view/>
+</sys_update_xml>
+</unload>

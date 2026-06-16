@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2026-06-15 17:07:44">
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>atf_output_variable_3396bf918391831074624d426daad3b2</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="atf_output_variable"&gt;&lt;atf_output_variable action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;attributes&gt;element_mapping_provider=com.glide.automated_testing_framework.ATFVariableElementMapper&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label&gt;Response Body&lt;/column_label&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;u_response_body&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_type display_value="String"&gt;string&lt;/internal_type&gt;&lt;label&gt;Response Body&lt;/label&gt;&lt;mandatory&gt;false&lt;/mandatory&gt;&lt;max_length&gt;32768&lt;/max_length&gt;&lt;model display_value="Call API - Generic"&gt;0060f39183dd431074624d426daad327&lt;/model&gt;&lt;model_id&gt;0060f39183dd431074624d426daad327&lt;/model_id&gt;&lt;model_table/&gt;&lt;name&gt;var__m_atf_output_variable_0060f39183dd431074624d426daad327&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;100&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_only_option/&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;atf_output_variable&lt;/sys_class_name&gt;&lt;sys_created_by&gt;diego.coppin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-06-05 07:42:20&lt;/sys_created_on&gt;&lt;sys_id&gt;3396bf918391831074624d426daad3b2&lt;/sys_id&gt;&lt;sys_name&gt;Response Body&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;atf_output_variable_3396bf918391831074624d426daad3b2&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;diego.coppin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-06-05 07:42:20&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/atf_output_variable&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id element="u_response_body" name="var__m_atf_output_variable_0060f39183dd431074624d426daad327" table="atf_output_variable"&gt;3396bf918391831074624d426daad3b2&lt;/id&gt;&lt;sys_created_by&gt;diego.coppin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-06-05 07:42:20&lt;/sys_created_on&gt;&lt;sys_id&gt;fff6bf558391831074624d426daad38f&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;diego.coppin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-06-05 07:42:20&lt;/sys_updated_on&gt;&lt;table&gt;atf_output_variable&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-663203728</payload_hash>
+<remote_update_set display_value=""/>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>diego.coppin</sys_created_by>
+<sys_created_on>2026-06-15 16:56:08</sys_created_on>
+<sys_id>e5a51dfc8329c35074624d426daad3eb</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ecc3640c20000001</sys_recorded_at>
+<sys_updated_by>diego.coppin</sys_updated_by>
+<sys_updated_on>2026-06-15 16:56:08</sys_updated_on>
+<table/>
+<target_name>Response Body</target_name>
+<type>Output Variables</type>
+<update_domain>global</update_domain>
+<update_guid>e1a51dfcc229c3505bd42c93aaccaceb</update_guid>
+<update_guid_history>e1a51dfcc229c3505bd42c93aaccaceb:-663203728,4407bf55929183103d736aeaa37b3cd6:1004361450,8807bf55d3918310aee9c68f05d26bd1:-663203728,0407bf55279183102fd7a39900c5f2bf:1004361450</update_guid_history>
+<update_set display_value="INDDDID">4534d5788329c35074624d426daad3b5</update_set>
+<view/>
+</sys_update_xml>
+</unload>

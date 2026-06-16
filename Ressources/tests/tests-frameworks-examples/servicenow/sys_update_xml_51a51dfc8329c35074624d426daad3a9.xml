@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2026-06-15 17:06:28">
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_atf_test_145c8db483e5c35074624d426daad3df</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_test"><sys_atf_test action="INSERT_OR_UPDATE"><active>true</active><copied_from/><description>Vérifier que la route API de calcul https://api.mathjs.org/v4/, retourne un résultat d'addition correct et un retour 200 quand un admin est connecté.</description><enable_parameterized_testing>false</enable_parameterized_testing><fail_on_server_error>true</fail_on_server_error><name>Vérifier que la route API de calcul, retourne un résultat d'addition</name><parameters/><remember/><sn_atf_tg_generated>false</sn_atf_tg_generated><sys_class_name>sys_atf_test</sys_class_name><sys_created_by>diego.coppin</sys_created_by><sys_created_on>2026-06-15 16:16:54</sys_created_on><sys_id>145c8db483e5c35074624d426daad3df</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Vérifier que la route API de calcul, retourne un résultat d'addition</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_atf_test_145c8db483e5c35074624d426daad3df</sys_update_name><sys_updated_by>diego.coppin</sys_updated_by><sys_updated_on>2026-06-15 16:16:54</sys_updated_on><test_origin>manual</test_origin></sys_atf_test><sys_variable_value action="delete_multiple" query="document_key=145c8db483e5c35074624d426daad3df"/></record_update>]]></payload>
+<payload_hash>-1218536094</payload_hash>
+<remote_update_set display_value=""/>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>diego.coppin</sys_created_by>
+<sys_created_on>2026-06-15 16:56:07</sys_created_on>
+<sys_id>51a51dfc8329c35074624d426daad3a9</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19ecc363e350000001</sys_recorded_at>
+<sys_updated_by>diego.coppin</sys_updated_by>
+<sys_updated_on>2026-06-15 16:56:07</sys_updated_on>
+<table/>
+<target_name>Vérifier que la route API de calcul, retourne un résultat d'addition</target_name>
+<type>Test</type>
+<update_domain>global</update_domain>
+<update_guid>99a51dfc5829c35087aa63fc123010a8</update_guid>
+<update_guid_history>99a51dfc5829c35087aa63fc123010a8:-1218536094,3eacc17816e5c350011d7e669a23754c:-1218536094</update_guid_history>
+<update_set display_value="INDDDID">4534d5788329c35074624d426daad3b5</update_set>
+<view/>
+</sys_update_xml>
+</unload>

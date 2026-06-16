@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2026-06-15 17:08:25">
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_atf_step_451d49f883e5c35074624d426daad38a</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step"><sys_atf_step action="INSERT_OR_UPDATE"><active>true</active><callable_outputs/><copied_from/><description/><display_name>Call API - Generic</display_name><inputs/><mugshots_cache_json/><notes>Récupérer la réponse API de la route https://api.mathjs.org/v4/?expr=2%2B3</notes><order>3</order><step_config display_value="Call API - Generic">0060f39183dd431074624d426daad327</step_config><sys_class_name>sys_atf_step</sys_class_name><sys_created_by>diego.coppin</sys_created_by><sys_created_on>2026-06-15 16:20:04</sys_created_on><sys_id>451d49f883e5c35074624d426daad38a</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Call API - Generic</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>sys_atf_step_451d49f883e5c35074624d426daad38a</sys_update_name><sys_updated_by>diego.coppin</sys_updated_by><sys_updated_on>2026-06-15 16:20:04</sys_updated_on><table/><test display_value="Vérifier que la route API de calcul, retourne un résultat d'addition">145c8db483e5c35074624d426daad3df</test><timeout/><warning_message/></sys_atf_step><sys_variable_value action="delete_multiple" query="document_key=451d49f883e5c35074624d426daad38a"/><sys_variable_value action="INSERT_OR_UPDATE"><document>sys_atf_step</document><document_key>451d49f883e5c35074624d426daad38a</document_key><order>300</order><sys_class_name>sys_variable_value</sys_class_name><sys_created_by>diego.coppin</sys_created_by><sys_created_on>2026-06-15 16:20:04</sys_created_on><sys_id>d96dc13c8365c35074624d426daad3be</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>diego.coppin</sys_updated_by><sys_updated_on>2026-06-15 16:20:04</sys_updated_on><value/><variable display_value="Headers">9815bf958351831074624d426daad326</variable></sys_variable_value><sys_variable_value action="INSERT_OR_UPDATE"><document>sys_atf_step</document><document_key>451d49f883e5c35074624d426daad38a</document_key><order>400</order><sys_class_name>sys_variable_value</sys_class_name><sys_created_by>diego.coppin</sys_created_by><sys_created_on>2026-06-15 16:20:04</sys_created_on><sys_id>116dc13c8365c35074624d426daad3bf</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>diego.coppin</sys_updated_by><sys_updated_on>2026-06-15 16:20:04</sys_updated_on><value/><variable display_value="Body">b506fb5d8351831074624d426daad352</variable></sys_variable_value><sys_variable_value action="INSERT_OR_UPDATE"><document>sys_atf_step</document><document_key>451d49f883e5c35074624d426daad38a</document_key><order>200</order><sys_class_name>sys_variable_value</sys_class_name><sys_created_by>diego.coppin</sys_created_by><sys_created_on>2026-06-15 16:20:04</sys_created_on><sys_id>156dc13c8365c35074624d426daad3bf</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>diego.coppin</sys_updated_by><sys_updated_on>2026-06-15 16:20:04</sys_updated_on><value>GET</value><variable display_value="Method">76d437558351831074624d426daad3c8</variable></sys_variable_value><sys_variable_value action="INSERT_OR_UPDATE"><document>sys_atf_step</document><document_key>451d49f883e5c35074624d426daad38a</document_key><order>100</order><sys_class_name>sys_variable_value</sys_class_name><sys_created_by>diego.coppin</sys_created_by><sys_created_on>2026-06-15 16:20:04</sys_created_on><sys_id>196dc13c8365c35074624d426daad3bf</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>diego.coppin</sys_updated_by><sys_updated_on>2026-06-15 16:20:04</sys_updated_on><value>https://api.mathjs.org/v4/?expr=2%2B3</value><variable display_value="URL">c144b3118351831074624d426daad376</variable></sys_variable_value><sys_element_mapping action="delete_multiple" query="table=var__m_atf_input_variable_0060f39183dd431074624d426daad327^id=451d49f883e5c35074624d426daad38a"/></record_update>]]></payload>
+<payload_hash>849360065</payload_hash>
+<remote_update_set display_value=""/>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>diego.coppin</sys_created_by>
+<sys_created_on>2026-06-15 16:56:07</sys_created_on>
+<sys_id>d5a51dfc8329c35074624d426daad3b1</sys_id>
+<sys_mod_count>1</sys_mod_count>
+<sys_recorded_at>19ecc38ca210000001</sys_recorded_at>
+<sys_updated_by>diego.coppin</sys_updated_by>
+<sys_updated_on>2026-06-15 16:58:54</sys_updated_on>
+<table/>
+<target_name>Call API - Generic</target_name>
+<type>Test Step</type>
+<update_domain>global</update_domain>
+<update_guid>8a46d1703a69c350c3cec7562ffcf166</update_guid>
+<update_guid_history>8a46d1703a69c350c3cec7562ffcf166:849360065,d56d0d7c49e5c350553c382b3c6d2145:849360065</update_guid_history>
+<update_set display_value="INDDDID">4534d5788329c35074624d426daad3b5</update_set>
+<view/>
+</sys_update_xml>
+</unload>
